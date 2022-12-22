@@ -1,2 +1,2 @@
-# swift
+# Swift
 Study Swift
