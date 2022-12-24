@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3R-NY-Dmp">
+                                <rect key="frame" x="20" y="97" width="350" height="563"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3u-Y7-DUD">
+                                <rect key="frame" x="20" y="685" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-aq-5Fu">
+                                <rect key="frame" x="20" y="721" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9xN-Ko-7Xu">
+                                <rect key="frame" x="20" y="56" width="350" height="32"/>
+                                <segments>
+                                    <segment title="현재위치"/>
+                                    <segment title="물왕저수지 정통방식"/>
+                                    <segment title="이디야 북한산점"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sgChangeLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="0OP-F7-cLR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H7D-aq-5Fu" firstAttribute="leading" secondItem="c3u-Y7-DUD" secondAttribute="leading" id="59e-cU-pMQ"/>
+                            <constraint firstItem="G3R-NY-Dmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AgK-TS-dY2"/>
+                            <constraint firstItem="G3R-NY-Dmp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Flw-9D-dyT"/>
+                            <constraint firstItem="9xN-Ko-7Xu" firstAttribute="trailing" secondItem="G3R-NY-Dmp" secondAttribute="trailing" id="Lgg-2s-D7q"/>
+                            <constraint firstItem="H7D-aq-5Fu" firstAttribute="top" secondItem="c3u-Y7-DUD" secondAttribute="bottom" constant="15" id="P8H-cH-QiQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3R-NY-Dmp" secondAttribute="bottom" constant="150" id="f9f-7J-Uby"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3R-NY-Dmp" secondAttribute="trailing" constant="20" id="fib-g6-QuQ"/>
+                            <constraint firstItem="G3R-NY-Dmp" firstAttribute="top" secondItem="9xN-Ko-7Xu" secondAttribute="bottom" constant="10" id="lJB-Vx-zZ1"/>
+                            <constraint firstItem="9xN-Ko-7Xu" firstAttribute="leading" secondItem="G3R-NY-Dmp" secondAttribute="leading" id="lKJ-C3-fjp"/>
+                            <constraint firstItem="c3u-Y7-DUD" firstAttribute="leading" secondItem="G3R-NY-Dmp" secondAttribute="leading" id="lhF-dZ-bxt"/>
+                            <constraint firstItem="c3u-Y7-DUD" firstAttribute="top" secondItem="G3R-NY-Dmp" secondAttribute="bottom" constant="25" id="sWu-36-eR4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel1" destination="c3u-Y7-DUD" id="tVg-36-1tq"/>
+                        <outlet property="locationLabel2" destination="H7D-aq-5Fu" id="M8F-Yn-NHC"/>
+                        <outlet property="mapView" destination="G3R-NY-Dmp" id="efI-yC-oob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
